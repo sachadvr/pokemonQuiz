@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com https://tyradex.vercel.app 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: https:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <title>Pokémon Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="networkIndicator" class="network-indicator">
+            <span id="networkStatus" class="network-status">Vérification...</span>
+        </div>
+        
+        <div id="homeScreen" class="screen active">
+            <div class="container pt-12">
+                <header class="safe-header">
+                    <h1>
+                        Pokémon Quiz
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Testez vos connaissances sur les Pokémon !
+                    </p>
+                </header>
+                
+                <div class="space-y-6">
+                    <button id="startQuizBtn" class="btn btn-primary">
+                        Commencer le Quiz
+                    </button>
+                    
+                    <button id="leaderboardBtn" class="btn btn-secondary">
+                        Classement
+                    </button>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-gray-400 text-sm">
+                        Développé par @sachadvr
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="quizScreen" class="screen hidden">
+            <div class="container pt-12">
+                <header class="flex justify-between items-center mb-6">
+                    <button id="backToHomeBtn" class="text-blue-400">
+                        Retour
+                    </button>
+                    <div class="text-center">
+                        <div id="progressBar" class="progress-bar">
+                            <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p id="questionCounter" class="text-sm text-gray-300">Question 1/10</p>
+                    </div>
+                    <div id="timer" class="timer">
+                        00:00
+                    </div>
+                </header>
+
+                <div class="card">
+                    <div class="text-center mb-8">
+                        <img id="pokemonImage" src="" alt="Pokémon" class="pokemon-image">
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <input 
+                            type="text" 
+                            id="pokemonGuess" 
+                            placeholder="Devinez le nom du Pokémon..." 
+                            autocomplete="off"
+                        >
+                        
+                        <button id="submitGuessBtn" class="btn btn-success btn-small">
+                            Valider
+                        </button>
+                    </div>
+                    
+                    <div id="feedback" class="feedback hidden">
+                        <p id="feedbackText" class="text-lg font-semibold"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultsScreen" class="screen hidden">
+            <div class="container pt-12">
+                <div class="text-center">
+                    <div class="card">
+                        <h2>
+                            Résultats
+                        </h2>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="card-small">
+                                <p class="text-gray-300">Score</p>
+                                <p id="finalScore" class="text-3xl font-bold text-yellow-400">0/10</p>
+                            </div>
+                            
+                            <div class="card-small">
+                                <p class="text-gray-300">Temps</p>
+                                <p id="finalTime" class="text-2xl font-bold text-blue-400">00:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <input 
+                                type="text" 
+                                id="playerName" 
+                                placeholder="Votre nom..." 
+                                maxlength="20"
+                            >
+                            
+                            <button id="saveScoreBtn" class="btn btn-success">
+                                Sauvegarder
+                            </button>
+                            
+                            <div class="flex space-x-4">
+                                <button id="playAgainBtn" class="btn btn-primary btn-small">
+                                    Rejouer
+                                </button>
+                                <button id="viewLeaderboardBtn" class="btn btn-secondary btn-small">
+                                    Classement
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="leaderboardScreen" class="screen hidden">
+            <div class="container pt-12">
+                <header class="flex justify-between items-center mb-6">
+                    <button id="backToHomeFromLeaderboardBtn" class="text-blue-400">
+                        Retour
+                    </button>
+                    <h2>
+                        Classement
+                    </h2>
+                    <div></div>
+                </header>
+
+                <div class="card">
+                    <div id="leaderboardList">
+                    </div>
+                    
+                    <div id="noScores" class="text-center py-8 text-gray-400 hidden">
+                        <p class="text-lg">Aucun score enregistré</p>
+                        <p class="text-sm">Jouez pour apparaître dans le classement !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/pokemon-api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/network.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
