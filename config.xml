@@ -21,6 +21,7 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <allow-intent href="market:*" />
+    <preference name="AndroidWindowSplashScreenAnimationIcon" value="res/drawable/ic_cdv_splashscreen.xml" />
     <platform name="ios">
         <preference name="deployment-target" value="12.0" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
@@ -71,11 +72,5 @@
         <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
-        <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
-        <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
-        <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
-        <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
-        <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
-        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
 </widget>

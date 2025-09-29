@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:ios",
-    "build:ios": "cd platforms/ios && xcodebuild -workspace PokemonApp.xcworkspace -scheme PokemonApp -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16 Plus' build",
+    "build:ios": "cd platforms/ios && xcodebuild -workspace PokemonApp.xcworkspace -scheme PokemonApp -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,id=3CBE139C-195C-4CE6-B8CC-A7D7A4849307' build",
     "run:ios": "npm run build:ios && npm run install:ios && npm run launch:ios"
   },
   "keywords": [
@@ -24,9 +24,9 @@
   },
   "cordova": {
     "platforms": [
-      "android",
       "browser",
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "cordova-plugin-network-information": {},
