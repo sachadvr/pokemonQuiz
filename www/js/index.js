@@ -157,12 +157,16 @@ class PokemonQuizApp {
             this.score++;
             this.showFeedback('Correct !', 'success');
             document.getElementById('pokemonImage').classList.add('revealed');
+            
+            if (navigator.vibrate) {
+                navigator.vibrate([200]);
+            }
         } else {
             this.showFeedback(`Incorrect ! C'était ${pokemon.name.fr}`, 'error');
             document.getElementById('pokemonImage').classList.add('revealed');
             
             if (navigator.vibrate) {
-                navigator.vibrate([100, 50, 100, 50, 100]);
+                navigator.vibrate([200, 100, 200]);
             }
         }
 
@@ -194,6 +198,10 @@ class PokemonQuizApp {
         
         document.getElementById('finalScore').textContent = `${this.score}/${this.quizData.length}`;
         document.getElementById('finalTime').textContent = this.storage.formatTime(totalTime);
+        
+        if (navigator.vibrate) {
+            navigator.vibrate([200, 100, 200, 100, 200]);
+        }
         
         this.showScreen('results');
     }
