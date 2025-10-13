@@ -23,6 +23,7 @@ class PokemonQuizApp {
     setupEventListeners() {
         document.getElementById('startQuizBtn').addEventListener('click', () => this.startQuiz());
         document.getElementById('leaderboardBtn').addEventListener('click', () => this.showLeaderboard());
+        document.getElementById('testVibrationBtn').addEventListener('click', () => this.testVibration());
         document.getElementById('backToHomeBtn').addEventListener('click', () => this.showScreen('home'));
         document.getElementById('submitGuessBtn').addEventListener('click', () => this.submitAnswer());
         document.getElementById('pokemonGuess').addEventListener('keypress', (e) => {
@@ -159,6 +160,10 @@ class PokemonQuizApp {
         } else {
             this.showFeedback(`Incorrect ! C'était ${pokemon.name.fr}`, 'error');
             document.getElementById('pokemonImage').classList.add('revealed');
+            
+            if (navigator.vibrate) {
+                navigator.vibrate([100, 50, 100, 50, 100]);
+            }
         }
 
         guessInput.disabled = true;
@@ -258,6 +263,22 @@ class PokemonQuizApp {
         }
         
         this.showScreen('leaderboard');
+    }
+
+    testVibration() {
+        if (navigator.vibrate) {
+            console.log('Test de vibration...');
+            
+            navigator.vibrate(200);
+            
+            setTimeout(() => {
+                navigator.vibrate([100, 50, 100]);
+            }, 1000);
+            
+            alert('Test de vibration effectué !\n1. Vibration simple (200ms)\n2. Vibration avec motif (100-50-100ms)');
+        } else {
+            alert('La vibration n\'est pas supportée sur cet appareil');
+        }
     }
 
     showError(message) {
