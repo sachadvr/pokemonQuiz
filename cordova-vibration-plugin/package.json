@@ -1,0 +1,24 @@
+{
+  "name": "cordova-plugin-vibration",
+  "version": "1.0.0",
+  "description": "Cordova Vibration Plugin",
+  "cordova": {
+    "id": "cordova-plugin-vibration",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "author": "Sacha Duvivier",
+  "engines": {
+    "cordovaDependencies": {
+      ">=6.0.0": {
+        "cordova-android": ">=4.0.0",
+        "cordova-ios": ">=4.0.0"
+      }
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
