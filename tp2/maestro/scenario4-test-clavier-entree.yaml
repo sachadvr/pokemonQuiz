@@ -1,0 +1,27 @@
+appId: org.example.project
+---
+# Scénario 4 : Test avec la touche Entrée du clavier
+
+- launchApp
+- waitForAnimationToEnd
+
+- assertVisible: "Devinez le Pokémon !"
+- assertVisible:
+    text: "Nom du Pokémon"
+- assertVisible: "Score: 0"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- pressKey: Enter
+
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible: "Score: 1"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Squirtle"
+- pressKey: Enter
+
+- assertVisible: "Incorrect. Le bon nom est Pikachu"
+- assertVisible: "Score: 1"

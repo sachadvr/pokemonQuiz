@@ -1,0 +1,29 @@
+appId: org.example.project
+---
+# Scénario 9 : Test avec un score faible
+
+- launchApp
+- waitForAnimationToEnd
+
+- repeat:
+    times: 10
+    commands:
+      - tapOn:
+          text: "Nom du Pokémon"
+      - inputText: "Charizard"
+      - tapOn:
+          text: "Valider"
+      - assertVisible: "Incorrect. Le bon nom est Pikachu"
+
+- assertVisible: "Partie terminée !"
+- assertVisible: "Votre score: 0/10"
+
+- tapOn:
+    text: "Votre nom"
+- inputText: "JoueurZero"
+- tapOn:
+    text: "Enregistrer"
+
+- assertVisible: "Leaderboard"
+- assertVisible: "JoueurZero"
+- assertVisible: "0/10"

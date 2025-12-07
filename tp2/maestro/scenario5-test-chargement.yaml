@@ -1,0 +1,13 @@
+appId: org.example.project
+---
+# Scénario 5 : Test du chargement initial
+
+- launchApp
+- assertVisible: "Devinez le Pokémon !"
+- waitForAnimationToEnd
+- assertNotVisible:
+    id: "loading"
+- assertVisible:
+    text: "Nom du Pokémon"
+- assertVisible:
+    text: "Valider"

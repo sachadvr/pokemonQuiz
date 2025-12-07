@@ -1,0 +1,32 @@
+appId: org.example.project
+---
+# Scénario 1 : Bon pokémon (Pikachu)
+
+- launchApp
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Devinez le Pokémon !"
+
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- assertVisible:
+    text: "Valider"
+
+- assertVisible:
+    text: "Score: 0"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+
+- tapOn:
+    text: "Valider"
+
+- assertVisible:
+    text: "Bravo ! C'est bien Pikachu !"
+
+- assertVisible:
+    text: "Score: 1"

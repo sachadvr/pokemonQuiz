@@ -1,0 +1,84 @@
+appId: org.example.project
+---
+# Scénario 7 : Test du leaderboard avec plusieurs joueurs
+
+- launchApp
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+
+- repeat:
+    times: 7
+    commands:
+      - tapOn:
+          text: "Nom du Pokémon"
+      - inputText: "Pikachu"
+      - tapOn:
+          text: "Valider"
+      - waitForAnimationToEnd
+      - assertVisible: "Bravo ! C'est bien Pikachu !"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Charizard"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Incorrect. Le bon nom est Pikachu"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Bulbasaur"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Incorrect. Le bon nom est Pikachu"
+
+- assertVisible: "Partie terminée !"
+- assertVisible: "Votre score: 8/10"
+
+- tapOn:
+    text: "Votre nom"
+- inputText: "Joueur1"
+- tapOn:
+    text: "Enregistrer"
+
+- assertVisible: "Leaderboard"
+- assertVisible: "Joueur1"
+- assertVisible: "8/10"
+
+- tapOn:
+    text: "Nouvelle partie"
+
+- waitForAnimationToEnd
+- assertVisible: "Question 0/10"
+
+- repeat:
+    times: 10
+    commands:
+      - tapOn:
+          text: "Nom du Pokémon"
+      - inputText: "Pikachu"
+      - tapOn:
+          text: "Valider"
+      - waitForAnimationToEnd
+      - assertVisible: "Bravo ! C'est bien Pikachu !"
+
+- assertVisible: "Partie terminée !"
+- assertVisible: "Votre score: 10/10"
+
+- tapOn:
+    text: "Votre nom"
+- inputText: "Joueur2"
+- tapOn:
+    text: "Enregistrer"
+
+- assertVisible: "Leaderboard"
+- assertVisible: "Joueur2"
+- assertVisible: "10/10"
+- assertVisible: "Joueur1"
+- assertVisible: "8/10"

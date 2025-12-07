@@ -1,0 +1,79 @@
+appId: org.example.project
+---
+# Scénario 3 : Tests complets sur Pikachu
+
+- launchApp
+- waitForAnimationToEnd
+
+- assertVisible: "Devinez le Pokémon !"
+- assertVisible:
+    text: "Nom du Pokémon"
+- assertVisible:
+    text: "Valider"
+- assertVisible: "Score: 0"
+
+- assertNotVisible: "Bravo ! C'est bien Pikachu !"
+- assertNotVisible: "Incorrect. Le bon nom est Pikachu"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "PIKACHU"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible: "Score: 1"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "pikachu"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible: "Score: 2"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "PiKaChU"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible: "Score: 3"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Bulbasaur"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Incorrect. Le bon nom est Pikachu"
+- assertVisible: "Score: 3"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pika"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Incorrect. Le bon nom est Pikachu"
+- assertVisible: "Score: 3"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible: "Score: 4"

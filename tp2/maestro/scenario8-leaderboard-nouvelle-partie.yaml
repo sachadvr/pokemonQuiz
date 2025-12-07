@@ -1,0 +1,42 @@
+appId: org.example.project
+---
+# Scénario 8 : Test de la nouvelle partie depuis le leaderboard
+
+- launchApp
+- waitForAnimationToEnd
+
+- repeat:
+    times: 10
+    commands:
+      - tapOn:
+          text: "Nom du Pokémon"
+      - inputText: "Pikachu"
+      - tapOn:
+          text: "Valider"
+      - assertVisible: "Bravo ! C'est bien Pikachu !"
+
+- assertVisible: "Partie terminée !"
+
+- tapOn:
+    text: "Votre nom"
+- inputText: "TestPlayer"
+- tapOn:
+    text: "Enregistrer"
+
+- assertVisible: "Leaderboard"
+- assertVisible: "TestPlayer"
+
+- tapOn:
+    text: "Nouvelle partie"
+
+- waitForAnimationToEnd
+- assertVisible: "Devinez le Pokémon !"
+- assertVisible:
+    text: "Question 0/10"
+- assertVisible:
+    text: "Score: 0"
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- assertVisible:
+    text: "Question 0/10"

@@ -1,0 +1,31 @@
+appId: org.example.project
+---
+# Scénario 10 : Test avec nom vide
+
+- launchApp
+- waitForAnimationToEnd
+
+- repeat:
+    times: 10
+    commands:
+      - tapOn:
+          text: "Nom du Pokémon"
+      - inputText: "Pikachu"
+      - tapOn:
+          text: "Valider"
+      - assertVisible: "Bravo ! C'est bien Pikachu !"
+
+- assertVisible: "Partie terminée !"
+- assertVisible: "Votre score: 10/10"
+
+- assertVisible:
+    text: "Votre nom"
+
+- tapOn:
+    text: "Votre nom"
+- inputText: "ValidName"
+- tapOn:
+    text: "Enregistrer"
+
+- assertVisible: "Leaderboard"
+- assertVisible: "ValidName"

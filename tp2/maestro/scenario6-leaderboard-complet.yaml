@@ -1,0 +1,129 @@
+appId: org.example.project
+---
+# Scénario 6 : Test complet avec leaderboard
+
+- launchApp
+- waitForAnimationToEnd
+
+- assertVisible: "Devinez le Pokémon !"
+- assertVisible:
+    text: "Question 0/10"
+- assertVisible:
+    text: "Nom du Pokémon"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 1/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 2/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 3/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 4/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 5/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 6/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 7/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 8/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+- assertVisible:
+    text: "Question 9/10"
+
+- tapOn:
+    text: "Nom du Pokémon"
+- inputText: "Pikachu"
+- tapOn:
+    text: "Valider"
+- waitForAnimationToEnd
+- assertVisible: "Bravo ! C'est bien Pikachu !"
+
+- waitForAnimationToEnd
+- assertVisible: "Partie terminée !"
+- assertVisible: "Votre score: 10/10"
+- assertVisible:
+    text: "Entrez votre nom pour le leaderboard"
+
+- tapOn:
+    text: "Votre nom"
+- inputText: "TestPlayer"
+- tapOn:
+    text: "Enregistrer"
+
+- waitForAnimationToEnd
+- assertVisible: "Leaderboard"
+- assertVisible: "TestPlayer"
+- assertVisible: "10/10"
+
+- assertVisible: "Nouvelle partie"
